@@ -1,0 +1,39 @@
+---
+- hosts: cluster0
+  gather_facts: yes
+  any_errors_fatal: true
+  become: true
+  become_user: root
+  tasks:
+    - name: Print each item.0 in the array
+      debug:
+        msg: "{{ item.0 }}"
+      loop: "{{ nodes | zip(nodes, nodenames) | list }}"
+
+    - name: Create base directory
+      file:
+        path: "{{ base_path }}{{item.0}}-t3rn"
+        state: directory
+        mode: "0755"
+      loop: "{{ nodes | zip(nodenames) | list }}"
+
+    - name: Create keys directory
+      file:
+        path: "{{ base_path }}{{item.0}}-t3rn/keys"
+        state: directory
+        mode: "0755"
+      loop: "{{ nodes | zip(nodenames) | list }}"
+
+    - name: Generate docker-compose.yml
+      template:
+        src: templates/docker-compose.yml.j2
+        dest: "{{ base_path }}{{item.0}}-t3rn/docker-compose.yml"
+        mode: "0644"
+      loop: "{{ nodes | zip(nodes, nodenames) | list }}"
+
+    - name: Generate .env file from template
+      template:
+        src: templates/.env.j2
+        dest: "{{ base_path }}{{item.0}}-t3rn/.env"
+        mode: "755"
+      loop: "{{ nodes | zip(nodenames, t3rn_privkeys) | list }}"

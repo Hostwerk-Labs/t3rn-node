@@ -1,0 +1,10 @@
+[all:vars]
+base_path=/storage/nodes/hostwerk
+
+[cluster0:vars]
+nodes=["00"]
+nodenames=["hostwerk01"]
+t3rn_privkeys=[""]
+
+[cluster0]
+127.0.0.1   node_name=hostwerk01
