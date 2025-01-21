@@ -1,4 +1,11 @@
-# T3RN executor нода с использованием Ansible для масштабированных установок
+# Multilanguage Readme
+
+[![en](https://img.shields.io/badge/lang-en-blue.svg)](https://github.com/Hostwerk-Labs/t3rn-node/blob/main/Readme-EN.md)
+[![ru](https://img.shields.io/badge/lang-ru-red.svg)](https://github.com/Hostwerk-Labs/t3rn-node/blob/main/Readme.md)
+
+# T3RN executor нода
+
+C использованием Ansible и Docker для масштабированных установок
 
 Мы всегда используем контейнеризированные версии экзекуторов с открытым исходным кодом
 
