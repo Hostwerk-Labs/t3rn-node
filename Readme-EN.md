@@ -38,6 +38,16 @@ We always use open-source containerized versions of executors.
 
 # Operation
 
+## Node Update
+
+Navigate to the node directory and update it:
+
+`cd /storage/nodes/hostwerk`
+
+`docker compose pull`
+
+`docker compose up -d`
+
 ## Common Errors
 
     - {"level":"error","time":1737492475413,"environment":"testnet","sourceNetwork":"blss","address":"0x9c5eE6A43e9823D95518cCBDe598D4C7feae3228","code":"NETWORK_ERROR","error":"could not detect network (event=\"noNetwork\", code=NETWORK_ERROR, version=providers/5.7.2)","msg":"❌ RPC error at getBalance"} - Incorrectly specified RPC network, in our case blss - Blast

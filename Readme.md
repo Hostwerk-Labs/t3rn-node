@@ -37,6 +37,16 @@ C использованием Ansible и Docker для масштабирова
 
 # Эксплуатация
 
+## Обновление ноды
+
+Заходим в директорию с нодой и обновляем ее
+
+`cd /storage/nodes/hostwerk`
+
+`docker compose pull`
+
+`docker compose up -d`
+
 ## Типовые ошибки
 
     - `{"level":"error","time":1737492475413,"environment":"testnet","sourceNetwork":"blss","address":"0x9c5eE6A43e9823D95518cCBDe598D4C7feae3228","code":"NETWORK_ERROR","error":"could not detect network (event=\"noNetwork\", code=NETWORK_ERROR, version=providers/5.7.2)","msg":"❌ RPC error at getBalance"}`
